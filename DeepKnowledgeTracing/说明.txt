@@ -1,0 +1,131 @@
+1. dkt  lr = 0.1 one-hot方式1
+
+new1.log
+model.pth
+params.pth
+
+2. r = 0.1 w1 = 0.003 w2 = 3.0
+
+new2.log
+model1.pth
+params1.pth\
+
+3. dkt lr = 0.05 one-hot方式1
+
+new3.log
+model2.pth
+params2.pth
+
+4.dkt lr = 0.01  one-hot方式1
+
+new4.log
+model3.pth
+params3.pth
+
+5.dkt lr = 0.1  one-hot方式2
+
+new5.log
+model4.pth
+params4.pth
+
+6.dkt lr = 0.1  one-hot方式1
+
+new6.log
+model5.pth
+params5.pth
+
+7.r = 0.1 w1 = 0.003 w2 = 3.0
+
+new7.log
+model6.pth
+params6.pth
+
+77.dkt lr = 0.1  one-hot方式1  2015数据集 100 250
+
+new77.log
+model7.pth
+params7.pth
+
+8. lr = 0.1 w1 = 0.003 w2 = 3.0 2015数据集 100 250
+
+new8.log
+model8.pth
+params8.pth
+
+9 r = 0.2 w1 = 1.0 w2 = 30.0 0910_b
+new9.log
+model9.pth
+params9.pth
+
+10 lr = 0.1 0910_a
+new10.log
+model10.pth
+params10.pth
+
+11 r = 0.05 w1 = 0.03 w2 = 3.0 0910_a
+new11.log
+model11.pth
+params11.pth
+
+12 lr = 0.1 2015数据集 150 200
+new12.log
+model12.pth
+params12.pth
+
+13.lr=0.1 0910_a 150 250 one-hot1
+new13.log
+model13.pth
+params13.pth
+14.lr=0.1 0910_a 150 250 one-hot2
+new14.log
+model14.pth
+params14.pth
+
+#############################
+
+迁移训练
+1. CAT params10
+new1.log
+model1.pth
+params1.pth
+# optimizer = optim.SGD(model.decoder.parameters(), lr=0.01, momentum=0.9)
+# exp_lr_scheduler = lr_scheduler.StepLR(optimizer, step_size=7, gamma=0.1)
+2. CAT params10
+new2.log
+model2.pth
+params2.pth
+# optimizer = optim.SGD(model.decoder.parameters(), lr=0.001, momentum=0.9)
+# lr_scheduler = lr_scheduler.StepLR(optimizer, step_size=5, gamma=0.1)
+
+3. CAT params5
+new3.log
+model3.log
+params3.log
+# optimizer = optim.SGD(model.decoder.parameters(), lr=0.01, momentum=0.9)
+# lr_scheduler = False
+
+// 改：需要原数据和要迁移的领域的mmd损失
+
+4. CAT params5 DAN
+new4.log
+model4.log
+params4.log
+# optimizer = optim.SGD(model.decoder.parameters(), lr=0.01, momentum=0.9)
+# lr_scheduler = lr_scheduler.StepLR(optimizer, step_size=5, gamma=0.1)
+
+###########################################################################
+# 以上没有进行输入层适配，以下全都进行了适配
+5. CAT params10
+new5.log
+model5.log
+params5.log
+# optimizer = optim.SGD(model.decoder.parameters(), lr=0.01, momentum=0.9)
+# lr_scheduler = False
+
+6.CAT params10 DAN
+new6.log
+model6.log
+params6.log
+# optimizer = optim.SGD(model.decoder.parameters(), lr=0.01, momentum=0.9)
+# lr_scheduler = False
+
